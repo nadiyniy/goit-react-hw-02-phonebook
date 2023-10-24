@@ -14,10 +14,8 @@ const Filter = ({ filter, onFilterChange }) => {
     </StyledFilterDiv>
   );
 };
-
 Filter.propTypes = {
   filter: propTypes.string.isRequired,
   onFilterChange: propTypes.func.isRequired,
 };
-
 export default Filter;
