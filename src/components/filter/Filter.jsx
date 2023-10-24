@@ -1,6 +1,7 @@
 import { StyledFilterDiv } from './Filter.styled';
+import propTypes from 'prop-types';
 
-export const Filter = ({ filter, onFilterChange }) => {
+const Filter = ({ filter, onFilterChange }) => {
   return (
     <StyledFilterDiv>
       <h3>Find contact by name</h3>
@@ -13,3 +14,10 @@ export const Filter = ({ filter, onFilterChange }) => {
     </StyledFilterDiv>
   );
 };
+
+Filter.propTypes = {
+  filter: propTypes.string.isRequired,
+  onFilterChange: propTypes.func.isRequired,
+};
+
+export default Filter;

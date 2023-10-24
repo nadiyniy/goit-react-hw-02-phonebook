@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import ContactList from './ContactList';
 
 export const StyledListUl = styled.ul`
   display: flex;

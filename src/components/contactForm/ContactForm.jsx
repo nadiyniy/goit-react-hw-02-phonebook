@@ -1,7 +1,13 @@
 import React from 'react';
 import { StyledContactForm } from './ContactForm.styled';
+import propTypes from 'prop-types';
 
-export class ContactForm extends React.Component {
+class ContactForm extends React.Component {
+  static propTypes = {
+    onAddContact: propTypes.func.isRequired,
+    contacts: propTypes.array.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -17,7 +23,7 @@ export class ContactForm extends React.Component {
     e.preventDefault();
 
     const { name, number } = this.state;
-    const { contacts } = this.props;
+    const { contacts, onAddContact } = this.props;
 
     const newContact = {
       number: number.trim(),
@@ -29,7 +35,7 @@ export class ContactForm extends React.Component {
       return;
     }
 
-    this.props.onAddContact(newContact);
+    onAddContact(newContact);
 
     this.setState({
       contacts: [newContact, ...contacts],
@@ -67,3 +73,5 @@ export class ContactForm extends React.Component {
     );
   }
 }
+
+export default ContactForm;

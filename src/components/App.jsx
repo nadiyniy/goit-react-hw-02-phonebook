@@ -1,8 +1,8 @@
 import React from 'react';
-import { ContactForm } from './contactForm/ContactForm';
-import { Filter } from './filter/Filter';
-import { ContactList } from './contactList/ContactList';
-import { Notification } from './notifications/Notification';
+import ContactForm from './contactForm/ContactForm';
+import Filter from './filter/Filter';
+import ContactList from './contactList/ContactList';
+import Notification from './notifications/Notification';
 
 export class App extends React.Component {
   state = {

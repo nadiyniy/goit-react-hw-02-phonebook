@@ -1,6 +1,7 @@
 import { StyledListUl } from './ContactList.styled';
+import propTypes from 'prop-types';
 
-export const ContactList = ({ contacts, deletedContact }) => {
+const ContactList = ({ contacts, deletedContact }) => {
   return (
     <StyledListUl>
       {contacts.map(contact => (
@@ -12,3 +13,10 @@ export const ContactList = ({ contacts, deletedContact }) => {
     </StyledListUl>
   );
 };
+
+ContactList.propTypes = {
+  contacts: propTypes.array.isRequired,
+  deletedContact: propTypes.func.isRequired,
+};
+
+export default ContactList;
